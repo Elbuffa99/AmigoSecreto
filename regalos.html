@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regalos de Participante</title>
+    <link rel="stylesheet" href="regalos.css">
+    <style>
+        /* Estilo para hacer la imagen más pequeña */
+        .regalo img {
+            width: 250px; /* Ajusta el tamaño a tu preferencia */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Estilo para el contenedor del regalo */
+        .regalo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para el botón */
+        .ver-producto {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .ver-producto:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-regalos">
+        <h1>Regalos para <span id="nombre-participante"></span></h1>
+
+        <!-- Opciones de regalos -->
+        <div class="regalos">
+            <!-- Los regalos se llenarán dinámicamente aquí -->
+        </div>
+
+        <!-- Botón para volver a la página anterior -->
+        <button onclick="history.back()">Volver a la lista</button>
+    </div>
+
+    <script>
+        // Obtener el nombre del participante de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const participante = urlParams.get('participante'); // Esto debería coincidir con el valor en "data-participante"
+
+        // Mostrar el nombre del participante en la página
+        document.getElementById('nombre-participante').textContent = participante || "Desconocido";
+
+        // Regalos por participante
+        const regalos = {
+            "BASTIÁN SUAREZ": [
+            { 
+                    nombre: "Mause Gamer", 
+                    imagen: "regalos/rbastian.webp",  // Imagen descargada localmente
+                    url: "https://www.mercadolibre.com.pe/logitech-g-g-series-g203-lightsync-negro/p/MPE16211422?product_trigger_id=MPE16211423&quantity=1" // Hipervínculo
+                },
+                { 
+                    nombre: "Mause Gamer", 
+                    imagen: "regalos/rbastian.webp",  // Imagen descargada localmente
+                    url: "https://www.mercadolibre.com.pe/logitech-g-g-series-g203-lightsync-negro/p/MPE16211422?product_trigger_id=MPE16211423&quantity=1" // Hipervínculo
+                },
+                { 
+                    nombre: "Mause Gamer", 
+                    imagen: "regalos/rbastian.webp", // Imagen descargada localmente
+                    url: "https://www.mercadolibre.com.pe/logitech-g-g-series-g203-lightsync-negro/p/MPE16211422?product_trigger_id=MPE16211423&quantity=1" // Hipervínculo
+                }
+            ],  
+
+            "KATY VIDELA": [
+
+                { 
+                    nombre: "Colonia Chupetin", 
+                    imagen: "regalos/rkaty.jpg",  // Imagen descargada localmente
+                    url: "https://www.facebook.com/p/Chupetin-Trujillo-100064858472988/",
+                    tamaño: "124px", // Hipervínculo
+                },
+                { 
+                    nombre: "DW Tropic Coconut", 
+                    imagen: "regalos/rkaty2.webp",  // Imagen descargada localmente
+                    url: "https://www.metro.pe/dw-tropic-coconut-hand-cream-100ml-974384/p" // Hipervínculo
+                },
+                { 
+                    nombre: "Bolso negro (no se especifica)", 
+                    imagen: "regalos/rkaty3.webp", // Imagen descargada localmente
+                    url: "https://i0.wp.com/afrofeminas.com/wp-content/uploads/2015/06/wesley-snipes-by-nigel-parry.jpg?ssl=1" // Hipervínculo
+                }
+            ],
+
+            "LUIS CONTRERAS": [
+                { 
+                    nombre: "Parrilla Cilíndrica", 
+                    imagen: "regalos/rluis.webp",  // Imagen descargada localmente
+                    url: "https://www.realplaza.com/parrilla-cilindrica-con-tapa-mr-grill-276559/p" // Hipervínculo
+                },
+                { 
+                    nombre: "Mochila Doo Australia", 
+                    imagen: "regalos/rluis3.png",
+                    tamaño: "200px",  // Imagen descargada localmente
+                    url: "https://www.falabella.com.pe/falabella-pe/product/883110801/Mochila-Hombre-Doo-Australia/883110803" // Hipervínculo
+                },
+                { 
+                    nombre: "Webcam con micrófono", 
+                    imagen: "regalos/rluis2.jpg", // Imagen descargada localmente
+                    url: "https://www.pcfactory.com.pe/producto/1333-teros-webcam-con-microfono-incorporado-usb-2-0-te-9070?gad_source=1&gclid=Cj0KCQiA3sq6BhD2ARIsAJ8MRwV8qCTVXYk-SblSDPSeBaIVcgonUcP9_l5KI8B3Y92_tTRWLYGI6vYaAjTeEALw_wcB" // Hipervínculo
+                }
+            ],
+            "KARLA PATIÑO": [
+                { 
+                    nombre: "Giftcard de visa(no saga ni ripley)", 
+                    imagen: "regalos/rkarla.webp",
+                    tamaño: "200px",  // Imagen descargada localmente
+                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJv9Jb2Uq3B3gK5nJo2js4wWCY3WG-JAkg&s" // Hipervínculo
+                },
+                { 
+                    nombre: "100 Soles (Efectivo)", 
+                    imagen: "regalos/rkarla2.jpeg",  // Imagen descargada localmente
+                    url: "https://e.radio-grpp.io/normal/2015/03/16/1474866.jpg" // Hipervínculo
+                },
+                { 
+                    nombre: "Tote Goretti(Pone la diferencia)", 
+                    imagen: "regalos/rkarla3.jpg",
+                    tamaño: "100px", // Imagen descargada localmente
+                    url: "https://www.crepier.com/mujeres/tote-goretti-grande" // Hipervínculo
+                }
+            ],
+            "ALLISON GUEVARA": [
+                { 
+                    nombre: "Audífono + Parlante ", 
+                    imagen: "regalos/ralisson.webp",  // Imagen descargada localmente
+                    url: "https://www.tiendaclaro.pe/audifono-lenovo-ht38---parlante-k30-lenovo-111599/p?skuId=386498&utm_campaign=online_100&utm_source=social_media&utm_medium=facebook&utm_content=dark_post_link_image_ad-1051_12_motivo3&utm_term=postpago-portabilidad%20renovacion&cu=cp1733409163&fbclid=PAZXh0bgNhZW0BMABhZGlkAasVs-FnaLoBpn2Ma3s3BQ8RGaEtBNCoRvT8iMSs3npQOPEHAgWXrF2RxtsBLRIU9WGAZQ_aem_c-SlhkO52w5ufK-ULJQ_PA" // Hipervínculo
+                },
+                { 
+                    nombre: "Audífono + Parlante ", 
+                    imagen: "regalos/ralisson.webp",  // Imagen descargada localmente
+                    url: "https://www.tiendaclaro.pe/audifono-lenovo-ht38---parlante-k30-lenovo-111599/p?skuId=386498&utm_campaign=online_100&utm_source=social_media&utm_medium=facebook&utm_content=dark_post_link_image_ad-1051_12_motivo3&utm_term=postpago-portabilidad%20renovacion&cu=cp1733409163&fbclid=PAZXh0bgNhZW0BMABhZGlkAasVs-FnaLoBpn2Ma3s3BQ8RGaEtBNCoRvT8iMSs3npQOPEHAgWXrF2RxtsBLRIU9WGAZQ_aem_c-SlhkO52w5ufK-ULJQ_PA" // Hipervínculo
+                },
+                { 
+                    nombre: "Audífono + Parlante ", 
+                    imagen: "regalos/ralisson.webp",  // Imagen descargada localmente
+                    url: "https://www.tiendaclaro.pe/audifono-lenovo-ht38---parlante-k30-lenovo-111599/p?skuId=386498&utm_campaign=online_100&utm_source=social_media&utm_medium=facebook&utm_content=dark_post_link_image_ad-1051_12_motivo3&utm_term=postpago-portabilidad%20renovacion&cu=cp1733409163&fbclid=PAZXh0bgNhZW0BMABhZGlkAasVs-FnaLoBpn2Ma3s3BQ8RGaEtBNCoRvT8iMSs3npQOPEHAgWXrF2RxtsBLRIU9WGAZQ_aem_c-SlhkO52w5ufK-ULJQ_PA" // Hipervínculo
+                },
+                
+            ],
+            "EVELYN SALVADOR": [
+                { 
+                    nombre: "Secadora de Cabello", 
+                    imagen: "regalos/revelyn.webp",  // Imagen descargada localmente
+                    url: "https://hiraoka.com.pe/secadora-de-cabello-siegen-professional-sg-3049c01?fbclid=IwY2xjawG-BhtleHRuA2FlbQIxMQABHTrBokn8tkgUO4CKv7KCZWW-1qJwm8mXSWqKQFbgKCOI-XiYo9oG6vZV_A_aem_un0Ldxj3Bj9obKMdRSb7WQ" // Hipervínculo
+                },
+                { 
+                    nombre: "Secadora de Cabello", 
+                    imagen: "regalos/revelyn.webp",  // Imagen descargada localmente
+                    url: "https://hiraoka.com.pe/secadora-de-cabello-siegen-professional-sg-3049c01?fbclid=IwY2xjawG-BhtleHRuA2FlbQIxMQABHTrBokn8tkgUO4CKv7KCZWW-1qJwm8mXSWqKQFbgKCOI-XiYo9oG6vZV_A_aem_un0Ldxj3Bj9obKMdRSb7WQ" // Hipervínculo
+                },
+                { 
+                    nombre: "Secadora de Cabello", 
+                    imagen: "regalos/revelyn.webp",  // Imagen descargada localmente
+                    url: "https://hiraoka.com.pe/secadora-de-cabello-siegen-professional-sg-3049c01?fbclid=IwY2xjawG-BhtleHRuA2FlbQIxMQABHTrBokn8tkgUO4CKv7KCZWW-1qJwm8mXSWqKQFbgKCOI-XiYo9oG6vZV_A_aem_un0Ldxj3Bj9obKMdRSb7WQ" // Hipervínculo
+                },
+                
+            ],
+            "RIDHER PACAYA": [
+                { 
+                    nombre: "Billetera Hombre Rip Curl", 
+                    imagen: "regalos/rridher.png",  // Imagen descargada localmente
+                    url: "https://www.falabella.com.pe/falabella-pe/product/20437521/Billetera-Hombre-Rip-Curl/20437522" // Hipervínculo
+                },
+                { 
+                    nombre: "Neceser Lewis", 
+                    imagen: "regalos/rridher2.png", 
+                    tamaño: "300px",  // Imagen descargada localmente
+                    url: "https://www.falabella.com.pe/falabella-pe/product/20574459/Neceser-Lewis-Hombre-Crepier/20574462?rid=Recs%21XLP%21PE_F.com%21Rec_1%21x%21Recently_products_XLP_f.com%21home%2120574461%212%2118" // Hipervínculo
+                },
+                { 
+                    nombre: "Reloj Lige Cuarzo", 
+                    imagen: "regalos/rridher3.png",
+                    tamaño: "120px",  // Imagen descargada localmente
+                    url: "https://www.falabella.com.pe/falabella-pe/product/135948656/Reloj-de-Hombre-Lige-Cuarzo/135948657?rid=Recs%21XLP%21PE_F.com%21Rec_1%21x%21Recently_products_XLP_f.com%21home%21135948657%213%2118" // Hipervínculo
+                },
+            ],
+            "ERLY INOÑAN": [
+                { 
+                    nombre: "Sombrero de ala ancha(img de referencia)", 
+                    imagen: "regalos/rerly.png",
+                    tamaño: "200px",  // Imagen descargada localmente
+                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWarwtAI8ZbzDp9_x7gWdLakd-b0DnzP9g4Q&s" // Hipervínculo
+                },
+                { 
+                    nombre: "Giftcard de visa", 
+                    imagen: "regalos/rkarla.webp",  // Imagen descargada localmente
+                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJv9Jb2Uq3B3gK5nJo2js4wWCY3WG-JAkg&s" // Hipervínculo
+                },
+                { 
+                    nombre: "Giftcard de visa", 
+                    imagen: "regalos/rkarla.webp",  // Imagen descargada localmente
+                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJv9Jb2Uq3B3gK5nJo2js4wWCY3WG-JAkg&s" // Hipervínculo
+                },
+            ],
+            "MITCHELL OBREGON": [
+                { 
+                    nombre: "PERFUME NATURA HUMOR", 
+                    imagen: "regalos/rmitchel.png",
+                    tamaño: "320px",  // Imagen descargada localmente
+                    url: "https://simple.ripley.com.pe/perfume-natura-humor-estelar-masculino-75-ml-pmp20000554488?s=mdco" // Hipervínculo
+                },
+                { 
+                    nombre: "PACK K'ALLMA COLONIA", 
+                    imagen: "regalos/rmitchel2.png", 
+                    tamaño: "210px",  // Imagen descargada localmente
+                    url: "https://simple.ripley.com.pe/pack-kallma-colonia-235-ml-colonia-midi-60-ml-hierba-luisa-pmp00002099920?s=mdco" // Hipervínculo
+                },
+                { 
+                    nombre: "Ron APPLETON", 
+                    imagen: "regalos/rmitchel3.png",
+                    tamaño: "150px",  // Imagen descargada localmente
+                    url: "https://www.plazavea.com.pe/ron-appleton-estate-reserve-blend-8-anos-botella-750ml/p" // Hipervínculo
+                },
+            ],
+            "KEVIN CHISQUIPAMA": [
+                { 
+                    nombre: "Perfume Hombre Uomo", 
+                    imagen: "regalos/rkevin.png",
+                    tamaño: "320px",  // Imagen descargada localmente
+                    url: "https://www.falabella.com.pe/falabella-pe/product/883167293/Perfume-Hombre-Uomo-Deluxe-100ml-Mossimo/883167294" // Hipervínculo
+                },
+                { 
+                    nombre: "Fuel Power", 
+                    imagen: "regalos/rkevin2.png", 
+                    tamaño: "260px",  // Imagen descargada localmente
+                    url: "https://www.falabella.com.pe/falabella-pe/product/119633928/Bleu-Intense-Night-Perfume-de-Hombre/119633929" // Hipervínculo
+                },
+                { 
+                    nombre: "Bleu Intense Night", 
+                    imagen: "regalos/rkevin3.png",
+                    tamaño: "300px",  // Imagen descargada localmente
+                    url: "https://www.falabella.com.pe/falabella-pe/product/19449010/Fuel-Power-Edt-100-ml/19449010" // Hipervínculo
+                },
+            ],
+            "RICARDO LEEY": [
+                { 
+                    nombre: "Parlante Bluetooth(no especifica img de referencia)", 
+                    imagen: "regalos/rchino.png",
+                    tamaño: "200px",  // Imagen descargada localmente
+                    url: "https://img.desmotivaciones.es/202001/vida-imagenes-40.jpg" // Hipervínculo
+                },
+                { 
+                    nombre: "Parlante Bluetooth(no especifica img de referencia)", 
+                    imagen: "regalos/rchino.png", 
+                    tamaño: "200px",  // Imagen descargada localmente
+                    url: "https://img.desmotivaciones.es/202001/vida-imagenes-40.jpg" // Hipervínculo
+                },
+                { 
+                    nombre: "Parlante Bluetooth(no especifica img de referencia)", 
+                    imagen: "regalos/rchino.png",
+                    tamaño: "200px",  // Imagen descargada localmente
+                    url: "https://img.desmotivaciones.es/202001/vida-imagenes-40.jpg" // Hipervínculo
+                },
+            ],
+            "ERIKA RUIZ": [
+                { 
+                    nombre: "Mochila Sybilla", 
+                    imagen: "regalos/rerikar.png",
+                    tamaño: "200px",  // Imagen descargada localmente
+                    url: "https://www.falabella.com.pe/falabella-pe/product/883136831/Mochila-Sybilla-/883136832" // Hipervínculo
+                },
+                { 
+                    nombre: "Mochila Sybilla", 
+                    imagen: "regalos/rerikar.png",
+                    tamaño: "200px",  // Imagen descargada localmente
+                    url: "https://www.falabella.com.pe/falabella-pe/product/883136831/Mochila-Sybilla-/883136832" // Hipervínculo
+                },
+                { 
+                    nombre: "Mochila Sybilla", 
+                    imagen: "regalos/rerikar.png",
+                    tamaño: "200px",  // Imagen descargada localmente
+                    url: "https://www.falabella.com.pe/falabella-pe/product/883136831/Mochila-Sybilla-/883136832" // Hipervínculo
+                },
+            ],
+            "ERIKA ACOSTA": [
+            { 
+                    nombre: "Giftcard de visa", 
+                    imagen: "regalos/rkarla.webp",  // Imagen descargada localmente
+                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJv9Jb2Uq3B3gK5nJo2js4wWCY3WG-JAkg&s" // Hipervínculo
+                },
+                { 
+                    nombre: "Giftcard de visa", 
+                    imagen: "regalos/rkarla.webp",  // Imagen descargada localmente
+                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJv9Jb2Uq3B3gK5nJo2js4wWCY3WG-JAkg&s" // Hipervínculo
+                },
+                { 
+                    nombre: "Giftcard de visa", 
+                    imagen: "regalos/rkarla.webp",  // Imagen descargada localmente
+                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJv9Jb2Uq3B3gK5nJo2js4wWCY3WG-JAkg&s" // Hipervínculo
+                },
+            ],
+            "YESENIA MARTINEZ": [
+            { 
+                    nombre: "Giftcard de visa", 
+                    imagen: "regalos/rkarla.webp",  // Imagen descargada localmente
+                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJv9Jb2Uq3B3gK5nJo2js4wWCY3WG-JAkg&s" // Hipervínculo
+                },
+                { 
+                    nombre: "Giftcard de visa", 
+                    imagen: "regalos/rkarla.webp",  // Imagen descargada localmente
+                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJv9Jb2Uq3B3gK5nJo2js4wWCY3WG-JAkg&s" // Hipervínculo
+                },
+                { 
+                    nombre: "Giftcard de visa", 
+                    imagen: "regalos/rkarla.webp",  // Imagen descargada localmente
+                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJv9Jb2Uq3B3gK5nJo2js4wWCY3WG-JAkg&s" // Hipervínculo
+                },
+            ],
+
+        };
+
+
+
+        // Mostrar los regalos correspondientes al participante
+const contenedorRegalos = document.querySelector('.regalos');
+
+if (regalos[participante]) {
+    regalos[participante].forEach(regalo => {
+        const regaloDiv = document.createElement('div');
+        regaloDiv.classList.add('regalo');
+        
+        const regaloNombre = document.createElement('h3');
+        regaloNombre.textContent = regalo.nombre;
+        
+        const regaloImagen = document.createElement('img');
+        regaloImagen.src = regalo.imagen;
+        regaloImagen.alt = regalo.nombre;
+
+        // Comprobar si el regalo tiene una propiedad 'tamaño' y aplicarla
+        if (regalo.tamaño) {
+            regaloImagen.style.width = regalo.tamaño;
+            regaloImagen.style.height = 'auto'; // Mantener proporción
+        }
+
+        // Crear el botón para ver el producto
+        const boton = document.createElement('a');
+        boton.href = regalo.url;  // URL del producto
+        boton.target = "_blank";  // Abre en una nueva pestaña
+        boton.classList.add('ver-producto');  // Añadir la clase para estilo
+        boton.textContent = "Ver producto";
+
+        // Insertar la imagen y el botón dentro del div
+        regaloDiv.appendChild(regaloNombre);
+        regaloDiv.appendChild(regaloImagen);
+        regaloDiv.appendChild(boton);
+
+        contenedorRegalos.appendChild(regaloDiv);
+    });
+} else {
+    // Si no se encuentran regalos para este participante
+    contenedorRegalos.innerHTML = "<p>No se encontraron regalos para este participante.</p>";
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* Estilos para list.html */
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alineamos al inicio */
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden; /* Evita desplazamiento horizontal */
+}
+
+/* Fondo con imagen que se repite */
+body {
+    background-image: url('tu-imagen.gif'); /* Cambia 'tu-imagen.gif' por la ruta de tu imagen */
+    background-repeat: repeat; /* Repite la imagen para cubrir toda la página */
+    background-size: auto; /* Mantiene el tamaño original de la imagen */
+    background-position: top left; /* Posiciona la imagen en la esquina superior izquierda */
+}
+
+/* Contenedor principal de los participantes */
+.contenedor-listado {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px; /* Añadimos un poco de espacio alrededor del contenido */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para que el gif se vea pero el contenido sea legible */
+    border-radius: 10px;
+    max-height: 90vh; /* Establece una altura máxima para el contenedor */
+    overflow-y: auto; /* Habilita el scroll vertical cuando el contenido excede la altura */
+    margin-top: 20px;
+    z-index: 1; /* Asegura que el contenido esté encima del fondo */
+}
+
+/* Bloques con los participantes */
+.bloque {
+    display: flex;
+    flex-wrap: wrap; /* Asegura que los participantes se ajusten a las filas */
+    justify-content: space-between;
+    margin: 10px 0;
+    width: 100%;
+}
+
+/* Estilo para los participantes */
+.participante {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo más opaco para los participantes */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 48%; /* Establece que dos participantes estén en cada fila */
+}
+
+.participante h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.participante img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contenedor-listado {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bloque {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .participante img {
+        width: 120px;
+        height: 120px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}

@@ -1,0 +1,36 @@
+/* regalos.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    background-image: url('tu-imagen.gif'); /* Asegúrate de usar la misma ruta de fondo */
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: top left;
+}
+
+.contenedor-regalos {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.regalos {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.regalo {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Amigos Secretos</title>
+    <link rel="stylesheet" href="list.css">
+</head>
+<body>
+    <audio id="audio" loop>
+        <source src="cr7.mp3" type="audio/mp3">
+        <source src="cr7.ogg" type="audio/ogg">
+        <source src="cr7.wav" type="audio/wav">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <div class="contenedor-listado">
+        <h1>Lista de Participantes</h1>
+        <br>
+        <!-- Bloque 1 -->
+        <div class="bloque">
+            <div class="participante">
+                <h3>BASTIÁN SUAREZ</h3>
+                <img src="portada/pbas.png" alt="Juan">
+                <br/>
+                <button class="ver-regalos" data-participante="BASTIÁN SUAREZ">Ver regalos</button>
+            </div>
+            <div class="participante">
+                <h3>KATY VIDELA</h3>
+                <img src="portada/pkaty.jpg" alt="Ana">
+                <br/>
+                <button class="ver-regalos" data-participante="KATY VIDELA">Ver regalos</button>
+            </div>
+        </div>
+
+        <!-- Bloque 2 -->
+        <div class="bloque">
+            <div class="participante">
+                <h3>KARLA PATIÑO</h3>
+                <img src="portada/pkarla.png" alt="María">
+                <br/>
+                <button class="ver-regalos" data-participante="KARLA PATIÑO">Ver regalos</button>
+            </div>
+            <div class="participante">
+                <h3>YESENIA MARTINEZ</h3>
+                <img src="portada/pyesi.png" alt="David">
+                <br/>
+                <button class="ver-regalos" data-participante="YESENIA MARTINEZ">Ver regalos</button>
+            </div>
+        </div>
+
+        <!-- Bloque 3 -->
+        <div class="bloque">
+            <div class="participante">
+                <h3>EVELYN SALVADOR</h3>
+                <img src="portada/peve.png" alt="María">
+                <br/>
+                <button class="ver-regalos" data-participante="EVELYN SALVADOR">Ver regalos</button>
+            </div>
+            <div class="participante">
+                <h3>RIDHER PACAYA</h3>
+                <img src="portada/prider.png" alt="David">
+                <br/>
+                <button class="ver-regalos" data-participante="RIDHER PACAYA">Ver regalos</button>
+            </div>
+        </div>
+
+        <!-- Bloque 4 -->
+        <div class="bloque">
+            <div class="participante">
+                <h3>ERIKA RUIZ</h3>
+                <img src="portada/perikar.png" alt="María">
+                <br/>
+                <button class="ver-regalos" data-participante="ERIKA RUIZ">Ver regalos</button>
+            </div>
+            <div class="participante">
+                <h3>ERIKA ACOSTA</h3>
+                <img src="portada/perikaa.png" alt="David">
+                <br/>
+                <button class="ver-regalos" data-participante="ERIKA ACOSTA">Ver regalos</button>
+            </div>
+        </div>
+
+        <!-- Bloque 5 -->
+        <div class="bloque">
+            <div class="participante">
+                <h3>KEVIN CHISQUIPAMA</h3>
+                <img src="portada/pkevin.png" alt="KEVIN CHISQUIPAMA">
+                <br/>
+                <button class="ver-regalos" data-participante="KEVIN CHISQUIPAMA">Ver regalos</button>
+            </div>
+            <div class="participante">
+                <h3>ALLISON GUEVARA</h3>
+                <img src="https://via.placeholder.com/150" alt="David">
+                <br/>
+                <button class="ver-regalos" data-participante="ALLISON GUEVARA">Ver regalos</button>
+            </div>
+        </div>
+
+        <!-- Bloque 6 -->
+        <div class="bloque">
+            <div class="participante">
+                <h3>ERLY INOÑAN</h3>
+                <img src="portada/perly.png" alt="María">
+                <br/>
+                <button class="ver-regalos" data-participante="ERLY INOÑAN">Ver regalos</button>
+            </div>
+            <div class="participante">
+                <h3>LUIS CONTRERAS</h3>
+                <img src="portada/pluis.png" alt="David">
+                <br/>
+                <button class="ver-regalos" data-participante="LUIS CONTRERAS">Ver regalos</button>
+            </div>
+        </div>
+
+        <!-- Bloque 7 -->
+        <div class="bloque">
+            <div class="participante">
+                <h3>RICARDO LEEY</h3>
+                <img src="portada/pchino.jpg" alt="RICARDO LEEY">
+                <br/>
+                <button class="ver-regalos" data-participante="RICARDO LEEY">Ver regalos</button>
+            </div>
+            <div class="participante">
+                <h3>MITCHELL OBREGON</h3>
+                <img src="portada/pmit.png" alt="David">
+                <br/>
+                <button class="ver-regalos" data-participante="MITCHELL OBREGON">Ver regalos</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para redirigir al hacer clic en el botón "Ver regalos"
+        const buttons = document.querySelectorAll('.ver-regalos');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                const participante = this.getAttribute('data-participante');
+                window.location.href = `regalos.html?participante=${participante}`;
+            });
+        });
+
+        // Función para reproducir el audio al hacer clic en cualquier parte de la página
+        document.body.addEventListener('click', function() {
+            var audio = document.getElementById('audio');
+            audio.play();  // Reproducir audio
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
