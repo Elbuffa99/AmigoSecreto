@@ -13,6 +13,43 @@
             display: block;
             margin: 0 auto;
         }
+        /* Estilo para el contenedor de los regalos */
+.regalos {
+    display: flex;
+    flex-wrap: wrap;  /* Permite que los elementos bajen a la siguiente línea */
+    justify-content: center;  /* Centra los elementos */
+    gap: 20px;  /* Espacio entre las imágenes */
+}
+
+/* Estilo para cada imagen dentro del regalo */
+.regalo img {
+    width: 100%;  /* Hace que la imagen ocupe el 100% del contenedor */
+    max-width: 250px;  /* Asegura que las imágenes no sean más grandes que 250px */
+    height: auto;  /* Mantiene la proporción de la imagen */
+}
+
+/* Estilo para el contenedor individual de cada regalo */
+.regalo {
+    text-align: center;
+    flex: 1 1 calc(33.333% - 20px);  /* Cada imagen ocupa un 33% de la pantalla y se ajusta */
+    max-width: 250px;
+    box-sizing: border-box;  /* Asegura que el padding y los márgenes no se sumen al tamaño */
+    margin-bottom: 20px;  /* Espacio entre las filas de imágenes */
+}
+
+/* En pantallas más grandes (pantallas grandes o de escritorio) */
+@media (min-width: 768px) {
+    .regalo {
+        flex: 1 1 calc(25% - 20px);  /* En pantallas grandes, cada regalo ocupa el 25% */
+    }
+}
+
+/* En pantallas más pequeñas (móviles) */
+@media (max-width: 480px) {
+    .regalo {
+        flex: 1 1 calc(100% - 20px);  /* En pantallas móviles, cada regalo ocupa el 100% */
+    }
+}
 
         /* Estilo para el contenedor del regalo */
         .regalo {
@@ -292,17 +329,17 @@
                     nombre: "Giftcard de visa", 
                     imagen: "regalos/rkarla.webp",  // Imagen descargada localmente
                     url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJv9Jb2Uq3B3gK5nJo2js4wWCY3WG-JAkg&s" // Hipervínculo
-                },
-                { 
+            },
+            { 
                     nombre: "Giftcard de visa", 
                     imagen: "regalos/rkarla.webp",  // Imagen descargada localmente
                     url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJv9Jb2Uq3B3gK5nJo2js4wWCY3WG-JAkg&s" // Hipervínculo
-                },
-                { 
+            },
+            { 
                     nombre: "Giftcard de visa", 
                     imagen: "regalos/rkarla.webp",  // Imagen descargada localmente
                     url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJv9Jb2Uq3B3gK5nJo2js4wWCY3WG-JAkg&s" // Hipervínculo
-                },
+            },
             ],
             "YESENIA MARTINEZ": [
             { 
@@ -311,9 +348,9 @@
                     url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJv9Jb2Uq3B3gK5nJo2js4wWCY3WG-JAkg&s" // Hipervínculo
                 },
                 { 
-                    nombre: "Giftcard de visa", 
-                    imagen: "regalos/rkarla.webp",  // Imagen descargada localmente
-                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFJv9Jb2Uq3B3gK5nJo2js4wWCY3WG-JAkg&s" // Hipervínculo
+                    nombre: "Pack Lentes de contacto(respetar colores de img)", 
+                    imagen: "regalos/rjesi2.png",  // Imagen descargada localmente
+                    url: "https://api.whatsapp.com/send?phone=51987657452&text=Enlace%3A%0Ahttps%3A%2F%2Ffb.me%2F2zPLJARc3%0A%0A%C2%A1Hola%21+Podr%C3%ADas+darme+m%C3%A1s+informaci%C3%B3n+de...&source_url=https%3A%2F%2Ffb.me%2F2zPLJARc3&icebreaker=%C2%A1Hola%21+Podr%C3%ADas+darme+m%C3%A1s+informaci%C3%B3n+de...&app=facebook&entry_point=post_cta&jid=51987657452%40s.whatsapp.net&show_keyboard=1&show_ad_attribution=1&source=FB_Post&token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEyNSJ9.eyJleHAiOjE3MzM4MTQ0MTAsInBob25lIjoiNTE5ODc2NTc0NTIiLCJ0ZXh0IjoiRW5sYWNlOlxuaHR0cHM6XC9cL2ZiLm1lXC8yelBMSkFSYzNcblxuXHUwMGExSG9sYSEgUG9kclx1MDBlZGFzIGRhcm1lIG1cdTAwZTFzIGluZm9ybWFjaVx1MDBmM24gZGUuLi4iLCJzb3VyY2VfdXJsIjoiaHR0cHM6XC9cL2ZiLm1lXC8yelBMSkFSYzMiLCJpY2VicmVha2VyIjoiXHUwMGExSG9sYSEgUG9kclx1MDBlZGFzIGRhcm1lIG1cdTAwZTFzIGluZm9ybWFjaVx1MDBmM24gZGUuLi4iLCJhcHAiOiJmYWNlYm9vayIsImVudHJ5X3BvaW50IjoicG9zdF9jdGEiLCJqaWQiOiI1MTk4NzY1NzQ1Mlx1MDA0MHMud2hhdHNhcHAubmV0Iiwic2hvd19rZXlib2FyZCI6MSwic2hvd19hZF9hdHRyaWJ1dGlvbiI6MSwic291cmNlIjoiRkJfUG9zdCIsInNvdXJjZV9pZCI6IjUyODY5MjkxMzQ5Njc3MiIsImNvbnRleHQiOiJBUkR1eXFhcFlJYVhEVUZpSkdneDg3eGVNZ2RYTlgzSDJVVkJzVHhna0pTZDV3T2V3VjFYRzl6Q1A2NEZjV1BmTnlvaWF3WkZCX09BUHBod1NqZzB2bkdaRjkwclNvdF9ieERiYTdMX0JFOU5RQnRHRWtTQmRxSWxiSWsyZWZqUFJ4SlY5MmVQMEFqbk9Vc0lXT3pwX0RWYVhZekVpSjBZR0RtNXhiOG9ZNUlrTFFyUzdQdmdtZkdBT3VuQi1fX1J0NmZJRDVTRkx0ZXg1cU5rcW1qYTZzWXp6dzJEakRSUEQyVXBEaUdtS25Xb3Q2bkNRVTgwSzhzMGw0M0VwS25aaXppQ0NlZU5SYkNHbmlnN0lVd2Nidl95WFNUcERhZVE5cUZMaWJ3YnZrb0JNOXNVVnE2MndMdGx1bFlXV2pXbHV1OUx3WEp0N281b2RqaGJ6N29tak1BWWZtem5jMnl4MEpJSWJZcmsifQ.0SVcZKbKcvOIbjkHtl55KLpdqTCsgizXhHMyXuk6ewpYGVBAnSLFow9r62rgSQs2GWFi4lVGegkrUa19BzuLPg&fbclid=IwY2xjawHDdmFleHRuA2FlbQIxMAABHWRKMY-FewzbvCLndBvwnJf_WCY5dB01RB-FDf3jKxZnJ8S8uc4VIHtYbQ_aem_7jTYB8Ojbuj7SGxBNiBeLw" // Hipervínculo
                 },
                 { 
                     nombre: "Giftcard de visa", 
